@@ -92,9 +92,9 @@ class TripletNet(nn.Module):
         triplet_embedding = self.embedding_net(x)
         return triplet_embedding
     
-    def plot_embedding(self, x, loss):
+    def plot_embedding(self, x, loss, name):
         fig = plt.figure(figsize=(10,10))
-        fig.suptitle('Triplet Embedding Current Loss: {:4f}'.format(loss))
+        fig.suptitle('Anchor {} - Current Loss: {:4f}'.format(name, loss))
         ax  = fig.add_subplot(projection='3d')
 
         x = torch.tensor(x, dtype=torch.float32)
